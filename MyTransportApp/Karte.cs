@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SwissTransport;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace MyTransportApp
 {
@@ -48,6 +52,37 @@ namespace MyTransportApp
       var ForYCoordinate = ("Y: " + SearchStation.First().Coordinate.YCoordinate);
 
       Coordinates.Items.Add(ForXCoordinate + "    " + ForYCoordinate);
+
+      StationBoardRoot stationBoardRoot = new StationBoardRoot();
+      stationBoardRoot = _transport.GetStationBoard(Name_von_Station.Text, "");
+      ShowMap(stationBoardRoot);
+    }
+
+    private void gMapControl1_Load(object sender, EventArgs e)
+    {
+      ITransport transport = new Transport();
+
+      gMapControl1.DragButton = MouseButtons.Left;
+      gMapControl1.CanDragMap = true;
+      gMapControl1.MapProvider = GMapProviders.GoogleMap;
+      gMapControl1.MinZoom = 0;
+      gMapControl1.MaxZoom = 24;
+      gMapControl1.Zoom = 9;
+      gMapControl1.AutoScroll = true;
+    }
+
+    private void ShowMap(StationBoardRoot stationBoardRoot)
+    {
+      double lat = stationBoardRoot.Station.Coordinate.XCoordinate;
+      double lng = stationBoardRoot.Station.Coordinate.YCoordinate;
+      gMapControl1.Position = new PointLatLng(lat, lng);
+      gMapControl1.Zoom = 18;
+      gMapControl1.MarkersEnabled = true;
+    }
+
+    private void Karte_Load(object sender, EventArgs e)
+    {
+      gMapControl1.Overlays.Clear();
     }
   }
 }

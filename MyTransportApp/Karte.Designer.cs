@@ -39,13 +39,16 @@
       this.MöglicheVerbindungenVonStationen = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.Coordinates = new System.Windows.Forms.ListBox();
+      this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+      this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.groupBox2.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      this.groupBox3.SuspendLayout();
       this.SuspendLayout();
       // 
       // Station_suchen
       // 
-      this.Station_suchen.Location = new System.Drawing.Point(381, 113);
+      this.Station_suchen.Location = new System.Drawing.Point(398, 92);
       this.Station_suchen.Name = "Station_suchen";
       this.Station_suchen.Size = new System.Drawing.Size(122, 34);
       this.Station_suchen.TabIndex = 0;
@@ -56,7 +59,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(83, 124);
+      this.label1.Location = new System.Drawing.Point(163, 103);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(92, 13);
       this.label1.TabIndex = 1;
@@ -64,7 +67,7 @@
       // 
       // Name_von_Station
       // 
-      this.Name_von_Station.Location = new System.Drawing.Point(181, 121);
+      this.Name_von_Station.Location = new System.Drawing.Point(261, 100);
       this.Name_von_Station.Name = "Name_von_Station";
       this.Name_von_Station.Size = new System.Drawing.Size(100, 20);
       this.Name_von_Station.TabIndex = 2;
@@ -134,9 +137,9 @@
       // groupBox1
       // 
       this.groupBox1.Controls.Add(this.Coordinates);
-      this.groupBox1.Location = new System.Drawing.Point(19, 176);
+      this.groupBox1.Location = new System.Drawing.Point(20, 132);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(665, 398);
+      this.groupBox1.Size = new System.Drawing.Size(665, 64);
       this.groupBox1.TabIndex = 10;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Koordinaten";
@@ -144,10 +147,47 @@
       // Coordinates
       // 
       this.Coordinates.FormattingEnabled = true;
-      this.Coordinates.Location = new System.Drawing.Point(62, 45);
+      this.Coordinates.Location = new System.Drawing.Point(104, 19);
       this.Coordinates.Name = "Coordinates";
-      this.Coordinates.Size = new System.Drawing.Size(462, 160);
+      this.Coordinates.Size = new System.Drawing.Size(462, 30);
       this.Coordinates.TabIndex = 0;
+      // 
+      // gMapControl1
+      // 
+      this.gMapControl1.Bearing = 0F;
+      this.gMapControl1.CanDragMap = true;
+      this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+      this.gMapControl1.GrayScaleMode = false;
+      this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+      this.gMapControl1.LevelsKeepInMemmory = 5;
+      this.gMapControl1.Location = new System.Drawing.Point(128, 19);
+      this.gMapControl1.MarkersEnabled = true;
+      this.gMapControl1.MaxZoom = 2;
+      this.gMapControl1.MinZoom = 2;
+      this.gMapControl1.MouseWheelZoomEnabled = true;
+      this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+      this.gMapControl1.Name = "gMapControl1";
+      this.gMapControl1.NegativeMode = false;
+      this.gMapControl1.PolygonsEnabled = true;
+      this.gMapControl1.RetryLoadTile = 0;
+      this.gMapControl1.RoutesEnabled = true;
+      this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+      this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+      this.gMapControl1.ShowTileGridLines = false;
+      this.gMapControl1.Size = new System.Drawing.Size(464, 345);
+      this.gMapControl1.TabIndex = 1;
+      this.gMapControl1.Zoom = 0D;
+      this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+      // 
+      // groupBox3
+      // 
+      this.groupBox3.Controls.Add(this.gMapControl1);
+      this.groupBox3.Location = new System.Drawing.Point(20, 217);
+      this.groupBox3.Name = "groupBox3";
+      this.groupBox3.Size = new System.Drawing.Size(664, 370);
+      this.groupBox3.TabIndex = 2;
+      this.groupBox3.TabStop = false;
+      this.groupBox3.Text = "Map";
       // 
       // Karte
       // 
@@ -155,6 +195,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(696, 599);
       this.Controls.Add(this.groupBox1);
+      this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.Name_von_Station);
       this.Controls.Add(this.label1);
@@ -162,8 +203,10 @@
       this.Name = "Karte";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Karte";
+      this.Load += new System.EventHandler(this.Karte_Load);
       this.groupBox2.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
+      this.groupBox3.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -182,5 +225,7 @@
     private System.Windows.Forms.Button MöglicheVerbindungenVonStationen;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.ListBox Coordinates;
+    private GMap.NET.WindowsForms.GMapControl gMapControl1;
+    private System.Windows.Forms.GroupBox groupBox3;
   }
 }
