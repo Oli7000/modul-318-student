@@ -38,24 +38,24 @@ namespace MyTransportApp
     {
       VorschlaegeChangesGrid.Rows.Clear();
 
-      ITransport transport = new Transport();
-
       var VonA = (tbx_A.Text);
       var VonB = (tbx_B.Text);
+      var date = (DatumBox.Value).ToString("yyyy-MM-dd");
+      var time = (ZeitBox.Value).ToString("HH:mm");
 
       try
       {
-        var connections = _transport.GetConnections(VonA, VonB).ConnectionList;
+        var connections = _transport.GetConnections(VonA, VonB, date, time).ConnectionList;
         //Console.WriteLine(connections.First().To.Arrival);
 
-        VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(0).From.Departure, connections.ElementAt(0).To.Platform, });
-        VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(1).From.Departure, connections.ElementAt(1).To.Platform, });
-        VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(2).From.Departure, connections.ElementAt(2).To.Platform, });
-        VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(3).From.Departure, connections.ElementAt(3).To.Platform, });
+        foreach(var connection in connections)
+        {
+          VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), Convert.ToDateTime(connection.From.Departure).ToString("HH:mm"), connection.To.Platform, });
+        }
       }
-      catch
+      catch (Exception ex)
       {
-        MessageBox.Show("Leider wurde nichts gefunden");
+        MessageBox.Show("Es wurden keine Verbindungen gefunden: " + ex.Message);
       }
     }
 

@@ -13,6 +13,7 @@ namespace MyTransportApp
 {
   public partial class Alle_Verbindungen_für_Station : Form
   {
+    
     private readonly ITransport _transport = new Transport();
 
     public Alle_Verbindungen_für_Station()
@@ -38,17 +39,22 @@ namespace MyTransportApp
 
     private void abfahrtstafel_anzeigen_Click(object sender, EventArgs e)
     {
+      abfahrtstafel.Rows.Clear();
+
       ITransport transport = new Transport();
 
-      var Stations = (eingegebeneStation.Text);
+      var stations = (Station.Text);
 
-      var StationBoard = _transport.GetStations(Stations).StationList;
-      
-      if (Stations.Equals(StationBoard))
+      var stationBoard = _transport.GetStationBoard(stations, " ");
+
+      foreach (var i in stationBoard.Entries)
       {
-        
+        abfahrtstafel.Rows.Add(new[]
+        {
+        stations.ToString(),
+        i.To,
+      });
       }
-
     }
   }
 }

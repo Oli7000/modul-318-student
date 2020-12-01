@@ -29,8 +29,6 @@
     private void InitializeComponent()
     {
       this.label1 = new System.Windows.Forms.Label();
-      this.tbx_A = new System.Windows.Forms.TextBox();
-      this.tbx_B = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
@@ -41,15 +39,17 @@
       this.button5 = new System.Windows.Forms.Button();
       this.MöglicheVerbindungenVonStationen = new System.Windows.Forms.Button();
       this.label2 = new System.Windows.Forms.Label();
-      this.textBox3 = new System.Windows.Forms.TextBox();
-      this.label5 = new System.Windows.Forms.Label();
-      this.textBox4 = new System.Windows.Forms.TextBox();
       this.VorschlaegeChangesGrid = new System.Windows.Forms.DataGridView();
       this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.label5 = new System.Windows.Forms.Label();
+      this.DatumBox = new System.Windows.Forms.DateTimePicker();
+      this.ZeitBox = new System.Windows.Forms.DateTimePicker();
+      this.tbx_B = new System.Windows.Forms.ComboBox();
+      this.tbx_A = new System.Windows.Forms.ComboBox();
       this.groupBox2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).BeginInit();
       this.groupBox1.SuspendLayout();
@@ -65,25 +65,10 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Von A:";
       // 
-      // tbx_A
-      // 
-      this.tbx_A.Location = new System.Drawing.Point(179, 45);
-      this.tbx_A.Name = "tbx_A";
-      this.tbx_A.Size = new System.Drawing.Size(100, 20);
-      this.tbx_A.TabIndex = 2;
-      this.tbx_A.TextChanged += new System.EventHandler(this.tbx_A_TextChanged);
-      // 
-      // tbx_B
-      // 
-      this.tbx_B.Location = new System.Drawing.Point(442, 44);
-      this.tbx_B.Name = "tbx_B";
-      this.tbx_B.Size = new System.Drawing.Size(100, 20);
-      this.tbx_B.TabIndex = 3;
-      // 
       // button1
       // 
       this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-      this.button1.Location = new System.Drawing.Point(364, 131);
+      this.button1.Location = new System.Drawing.Point(477, 140);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(178, 41);
       this.button1.TabIndex = 4;
@@ -95,7 +80,7 @@
       // 
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.Location = new System.Drawing.Point(92, 209);
+      this.label3.Location = new System.Drawing.Point(51, 220);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(169, 31);
       this.label3.TabIndex = 6;
@@ -105,7 +90,7 @@
       // 
       this.label4.AutoSize = true;
       this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.Location = new System.Drawing.Point(329, 40);
+      this.label4.Location = new System.Drawing.Point(330, 42);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(77, 24);
       this.label4.TabIndex = 7;
@@ -177,34 +162,11 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(95, 131);
+      this.label2.Location = new System.Drawing.Point(28, 131);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(41, 13);
       this.label2.TabIndex = 9;
       this.label2.Text = "Datum:";
-      // 
-      // textBox3
-      // 
-      this.textBox3.Location = new System.Drawing.Point(98, 152);
-      this.textBox3.Name = "textBox3";
-      this.textBox3.Size = new System.Drawing.Size(100, 20);
-      this.textBox3.TabIndex = 10;
-      // 
-      // label5
-      // 
-      this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(215, 131);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(43, 13);
-      this.label5.TabIndex = 11;
-      this.label5.Text = "Uhrzeit:";
-      // 
-      // textBox4
-      // 
-      this.textBox4.Location = new System.Drawing.Point(218, 151);
-      this.textBox4.Name = "textBox4";
-      this.textBox4.Size = new System.Drawing.Size(100, 20);
-      this.textBox4.TabIndex = 12;
       // 
       // VorschlaegeChangesGrid
       // 
@@ -214,9 +176,9 @@
             this.Column4,
             this.Column1,
             this.Column2});
-      this.VorschlaegeChangesGrid.Location = new System.Drawing.Point(98, 243);
+      this.VorschlaegeChangesGrid.Location = new System.Drawing.Point(57, 254);
       this.VorschlaegeChangesGrid.Name = "VorschlaegeChangesGrid";
-      this.VorschlaegeChangesGrid.Size = new System.Drawing.Size(444, 171);
+      this.VorschlaegeChangesGrid.Size = new System.Drawing.Size(566, 206);
       this.VorschlaegeChangesGrid.TabIndex = 13;
       this.VorschlaegeChangesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VorschlaegeChangesGrid_CellContentClick);
       // 
@@ -225,37 +187,41 @@
       this.Column3.HeaderText = "Von";
       this.Column3.Name = "Column3";
       this.Column3.ReadOnly = true;
+      this.Column3.Width = 130;
       // 
       // Column4
       // 
       this.Column4.HeaderText = "Bis";
       this.Column4.Name = "Column4";
       this.Column4.ReadOnly = true;
+      this.Column4.Width = 130;
       // 
       // Column1
       // 
       this.Column1.HeaderText = "Abfahrt";
       this.Column1.Name = "Column1";
       this.Column1.ReadOnly = true;
+      this.Column1.Width = 130;
       // 
       // Column2
       // 
       this.Column2.HeaderText = "Platform";
       this.Column2.Name = "Column2";
       this.Column2.ReadOnly = true;
+      this.Column2.Width = 130;
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.label5);
+      this.groupBox1.Controls.Add(this.DatumBox);
+      this.groupBox1.Controls.Add(this.ZeitBox);
+      this.groupBox1.Controls.Add(this.tbx_B);
       this.groupBox1.Controls.Add(this.tbx_A);
       this.groupBox1.Controls.Add(this.VorschlaegeChangesGrid);
       this.groupBox1.Controls.Add(this.label1);
-      this.groupBox1.Controls.Add(this.textBox4);
       this.groupBox1.Controls.Add(this.label3);
       this.groupBox1.Controls.Add(this.label4);
       this.groupBox1.Controls.Add(this.button1);
-      this.groupBox1.Controls.Add(this.label5);
-      this.groupBox1.Controls.Add(this.tbx_B);
-      this.groupBox1.Controls.Add(this.textBox3);
       this.groupBox1.Controls.Add(this.label2);
       this.groupBox1.Location = new System.Drawing.Point(12, 107);
       this.groupBox1.Name = "groupBox1";
@@ -263,6 +229,49 @@
       this.groupBox1.TabIndex = 14;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Hauptteil";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(248, 130);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(28, 13);
+      this.label5.TabIndex = 18;
+      this.label5.Text = "Zeit:";
+      // 
+      // DatumBox
+      // 
+      this.DatumBox.CustomFormat = "YYYY-mm-dd";
+      this.DatumBox.Location = new System.Drawing.Point(31, 161);
+      this.DatumBox.Name = "DatumBox";
+      this.DatumBox.Size = new System.Drawing.Size(200, 20);
+      this.DatumBox.TabIndex = 17;
+      // 
+      // ZeitBox
+      // 
+      this.ZeitBox.CustomFormat = "HH:mm";
+      this.ZeitBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+      this.ZeitBox.Location = new System.Drawing.Point(248, 161);
+      this.ZeitBox.Name = "ZeitBox";
+      this.ZeitBox.ShowUpDown = true;
+      this.ZeitBox.Size = new System.Drawing.Size(199, 20);
+      this.ZeitBox.TabIndex = 16;
+      // 
+      // tbx_B
+      // 
+      this.tbx_B.FormattingEnabled = true;
+      this.tbx_B.Location = new System.Drawing.Point(421, 43);
+      this.tbx_B.Name = "tbx_B";
+      this.tbx_B.Size = new System.Drawing.Size(121, 21);
+      this.tbx_B.TabIndex = 15;
+      // 
+      // tbx_A
+      // 
+      this.tbx_A.FormattingEnabled = true;
+      this.tbx_A.Location = new System.Drawing.Point(168, 47);
+      this.tbx_A.Name = "tbx_A";
+      this.tbx_A.Size = new System.Drawing.Size(121, 21);
+      this.tbx_A.TabIndex = 14;
       // 
       // Form1
       // 
@@ -286,27 +295,27 @@
     #endregion
 
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TextBox tbx_A;
-    private System.Windows.Forms.TextBox tbx_B;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Button MöglicheVerbindungenVonStationen;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox textBox3;
-    private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.TextBox textBox4;
     private System.Windows.Forms.Button Karte;
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.DataGridView VorschlaegeChangesGrid;
     private System.Windows.Forms.Button button6;
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.ComboBox tbx_B;
+    private System.Windows.Forms.ComboBox tbx_A;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.DateTimePicker ZeitBox;
+    private System.Windows.Forms.DateTimePicker DatumBox;
+    private System.Windows.Forms.Label label5;
   }
 }
 

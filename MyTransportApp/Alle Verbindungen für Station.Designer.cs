@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.label1 = new System.Windows.Forms.Label();
-      this.eingegebeneStation = new System.Windows.Forms.TextBox();
+      this.Station = new System.Windows.Forms.TextBox();
       this.abfahrtstafel_anzeigen = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.VerbindungenFinden = new System.Windows.Forms.Button();
@@ -38,9 +38,12 @@
       this.button5 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.abfahrtstafel = new System.Windows.Forms.ListBox();
+      this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.abfahrtstafel = new System.Windows.Forms.DataGridView();
       this.groupBox2.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.abfahrtstafel)).BeginInit();
       this.SuspendLayout();
       // 
       // label1
@@ -52,12 +55,12 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Station:";
       // 
-      // eingegebeneStation
+      // Station
       // 
-      this.eingegebeneStation.Location = new System.Drawing.Point(173, 85);
-      this.eingegebeneStation.Name = "eingegebeneStation";
-      this.eingegebeneStation.Size = new System.Drawing.Size(100, 20);
-      this.eingegebeneStation.TabIndex = 1;
+      this.Station.Location = new System.Drawing.Point(173, 85);
+      this.Station.Name = "Station";
+      this.Station.Size = new System.Drawing.Size(100, 20);
+      this.Station.TabIndex = 1;
       // 
       // abfahrtstafel_anzeigen
       // 
@@ -135,28 +138,45 @@
       // 
       this.groupBox1.Controls.Add(this.abfahrtstafel);
       this.groupBox1.Controls.Add(this.label1);
-      this.groupBox1.Controls.Add(this.eingegebeneStation);
+      this.groupBox1.Controls.Add(this.Station);
       this.groupBox1.Controls.Add(this.abfahrtstafel_anzeigen);
       this.groupBox1.Location = new System.Drawing.Point(13, 96);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(671, 376);
+      this.groupBox1.Size = new System.Drawing.Size(671, 491);
       this.groupBox1.TabIndex = 10;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Abfahrtstafel";
       // 
+      // Column2
+      // 
+      this.Column2.HeaderText = "Bis:";
+      this.Column2.Name = "Column2";
+      this.Column2.ReadOnly = true;
+      this.Column2.Width = 200;
+      // 
+      // Column1
+      // 
+      this.Column1.HeaderText = "Von:";
+      this.Column1.Name = "Column1";
+      this.Column1.ReadOnly = true;
+      this.Column1.Width = 200;
+      // 
       // abfahrtstafel
       // 
-      this.abfahrtstafel.FormattingEnabled = true;
-      this.abfahrtstafel.Location = new System.Drawing.Point(115, 153);
+      this.abfahrtstafel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.abfahrtstafel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+      this.abfahrtstafel.Location = new System.Drawing.Point(115, 138);
       this.abfahrtstafel.Name = "abfahrtstafel";
-      this.abfahrtstafel.Size = new System.Drawing.Size(443, 186);
+      this.abfahrtstafel.Size = new System.Drawing.Size(443, 332);
       this.abfahrtstafel.TabIndex = 3;
       // 
       // Alle_Verbindungen_für_Station
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(696, 484);
+      this.ClientSize = new System.Drawing.Size(696, 599);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.groupBox2);
       this.Name = "Alle_Verbindungen_für_Station";
@@ -165,6 +185,7 @@
       this.groupBox2.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.abfahrtstafel)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -172,7 +193,7 @@
     #endregion
 
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TextBox eingegebeneStation;
+    private System.Windows.Forms.TextBox Station;
     private System.Windows.Forms.Button abfahrtstafel_anzeigen;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Button VerbindungenFinden;
@@ -181,6 +202,8 @@
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.ListBox abfahrtstafel;
+    private System.Windows.Forms.DataGridView abfahrtstafel;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
   }
 }

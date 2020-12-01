@@ -134,9 +134,9 @@
       // groupBox1
       // 
       this.groupBox1.Controls.Add(this.Coordinates);
-      this.groupBox1.Location = new System.Drawing.Point(33, 176);
+      this.groupBox1.Location = new System.Drawing.Point(19, 176);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(635, 280);
+      this.groupBox1.Size = new System.Drawing.Size(665, 398);
       this.groupBox1.TabIndex = 10;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Koordinaten";
@@ -153,7 +153,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(696, 484);
+      this.ClientSize = new System.Drawing.Size(696, 599);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.Name_von_Station);
