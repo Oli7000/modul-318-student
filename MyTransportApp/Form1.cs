@@ -67,14 +67,40 @@ namespace MyTransportApp
       this.Close();
     }
 
-    private void VorschlaegeChangesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-    }
-
     private void tbx_A_TextChanged(object sender, EventArgs e)
     {
+      ITransport transport = new Transport();
+      tbx_A.Items.Clear();
 
+      var VonA = (tbx_A.Text);
+
+      var stations= _transport.GetStations(VonA);
+
+      foreach (var station in stations.StationList)
+      {
+        tbx_A.Items.Add(station.Name);
+      }
+
+      tbx_A.Focus();
+      tbx_A.SelectionStart = tbx_A.Text.Length;
+    }
+
+    private void tbx_B_TextChanged(object sender, EventArgs e)
+    {
+      ITransport transport = new Transport();
+      tbx_B.Items.Clear();
+
+      var VonA = (tbx_B.Text);
+
+      var stations = _transport.GetStations(VonA);
+
+      foreach (var station in stations.StationList)
+      {
+        tbx_B.Items.Add(station.Name);
+      }
+
+      tbx_B.Focus();
+      tbx_B.SelectionStart = tbx_B.Text.Length;
     }
   }
 }

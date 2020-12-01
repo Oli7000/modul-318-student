@@ -40,16 +40,16 @@
       this.MöglicheVerbindungenVonStationen = new System.Windows.Forms.Button();
       this.label2 = new System.Windows.Forms.Label();
       this.VorschlaegeChangesGrid = new System.Windows.Forms.DataGridView();
+      this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.label5 = new System.Windows.Forms.Label();
       this.DatumBox = new System.Windows.Forms.DateTimePicker();
       this.ZeitBox = new System.Windows.Forms.DateTimePicker();
       this.tbx_B = new System.Windows.Forms.ComboBox();
       this.tbx_A = new System.Windows.Forms.ComboBox();
-      this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.groupBox2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).BeginInit();
       this.groupBox1.SuspendLayout();
@@ -180,7 +180,34 @@
       this.VorschlaegeChangesGrid.Name = "VorschlaegeChangesGrid";
       this.VorschlaegeChangesGrid.Size = new System.Drawing.Size(624, 230);
       this.VorschlaegeChangesGrid.TabIndex = 13;
-      this.VorschlaegeChangesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VorschlaegeChangesGrid_CellContentClick);
+      // 
+      // Column3
+      // 
+      this.Column3.HeaderText = "Von";
+      this.Column3.Name = "Column3";
+      this.Column3.ReadOnly = true;
+      this.Column3.Width = 145;
+      // 
+      // Column4
+      // 
+      this.Column4.HeaderText = "Bis";
+      this.Column4.Name = "Column4";
+      this.Column4.ReadOnly = true;
+      this.Column4.Width = 145;
+      // 
+      // Column1
+      // 
+      this.Column1.HeaderText = "Abfahrt";
+      this.Column1.Name = "Column1";
+      this.Column1.ReadOnly = true;
+      this.Column1.Width = 145;
+      // 
+      // Column2
+      // 
+      this.Column2.HeaderText = "Platform";
+      this.Column2.Name = "Column2";
+      this.Column2.ReadOnly = true;
+      this.Column2.Width = 145;
       // 
       // groupBox1
       // 
@@ -236,6 +263,7 @@
       this.tbx_B.Name = "tbx_B";
       this.tbx_B.Size = new System.Drawing.Size(121, 21);
       this.tbx_B.TabIndex = 15;
+      this.tbx_B.TextUpdate += new System.EventHandler(this.tbx_B_TextChanged);
       // 
       // tbx_A
       // 
@@ -244,34 +272,7 @@
       this.tbx_A.Name = "tbx_A";
       this.tbx_A.Size = new System.Drawing.Size(121, 21);
       this.tbx_A.TabIndex = 14;
-      // 
-      // Column3
-      // 
-      this.Column3.HeaderText = "Von";
-      this.Column3.Name = "Column3";
-      this.Column3.ReadOnly = true;
-      this.Column3.Width = 145;
-      // 
-      // Column4
-      // 
-      this.Column4.HeaderText = "Bis";
-      this.Column4.Name = "Column4";
-      this.Column4.ReadOnly = true;
-      this.Column4.Width = 145;
-      // 
-      // Column1
-      // 
-      this.Column1.HeaderText = "Abfahrt";
-      this.Column1.Name = "Column1";
-      this.Column1.ReadOnly = true;
-      this.Column1.Width = 145;
-      // 
-      // Column2
-      // 
-      this.Column2.HeaderText = "Platform";
-      this.Column2.Name = "Column2";
-      this.Column2.ReadOnly = true;
-      this.Column2.Width = 145;
+      this.tbx_A.TextUpdate += new System.EventHandler(this.tbx_A_TextChanged);
       // 
       // Form1
       // 
