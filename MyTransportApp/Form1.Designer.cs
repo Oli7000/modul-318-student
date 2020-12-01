@@ -49,15 +49,17 @@
       this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.groupBox2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).BeginInit();
+      this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
       // label1
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(133, 138);
+      this.label1.Location = new System.Drawing.Point(94, 44);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(68, 24);
       this.label1.TabIndex = 0;
@@ -65,14 +67,15 @@
       // 
       // tbx_A
       // 
-      this.tbx_A.Location = new System.Drawing.Point(206, 142);
+      this.tbx_A.Location = new System.Drawing.Point(179, 45);
       this.tbx_A.Name = "tbx_A";
       this.tbx_A.Size = new System.Drawing.Size(100, 20);
       this.tbx_A.TabIndex = 2;
+      this.tbx_A.TextChanged += new System.EventHandler(this.tbx_A_TextChanged);
       // 
       // tbx_B
       // 
-      this.tbx_B.Location = new System.Drawing.Point(477, 141);
+      this.tbx_B.Location = new System.Drawing.Point(442, 44);
       this.tbx_B.Name = "tbx_B";
       this.tbx_B.Size = new System.Drawing.Size(100, 20);
       this.tbx_B.TabIndex = 3;
@@ -80,7 +83,7 @@
       // button1
       // 
       this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-      this.button1.Location = new System.Drawing.Point(451, 201);
+      this.button1.Location = new System.Drawing.Point(364, 131);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(178, 41);
       this.button1.TabIndex = 4;
@@ -92,7 +95,7 @@
       // 
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.Location = new System.Drawing.Point(108, 266);
+      this.label3.Location = new System.Drawing.Point(92, 209);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(169, 31);
       this.label3.TabIndex = 6;
@@ -102,7 +105,7 @@
       // 
       this.label4.AutoSize = true;
       this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.Location = new System.Drawing.Point(394, 138);
+      this.label4.Location = new System.Drawing.Point(329, 40);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(77, 24);
       this.label4.TabIndex = 7;
@@ -120,11 +123,12 @@
       this.groupBox2.Size = new System.Drawing.Size(671, 67);
       this.groupBox2.TabIndex = 8;
       this.groupBox2.TabStop = false;
-      this.groupBox2.Text = "Navigation";
+      this.groupBox2.Text = "Menü";
       // 
       // button6
       // 
-      this.button6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.button6.BackColor = System.Drawing.SystemColors.GrayText;
+      this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
       this.button6.Location = new System.Drawing.Point(6, 19);
       this.button6.Name = "button6";
       this.button6.Size = new System.Drawing.Size(123, 36);
@@ -166,14 +170,14 @@
       this.MöglicheVerbindungenVonStationen.Name = "MöglicheVerbindungenVonStationen";
       this.MöglicheVerbindungenVonStationen.Size = new System.Drawing.Size(198, 36);
       this.MöglicheVerbindungenVonStationen.TabIndex = 1;
-      this.MöglicheVerbindungenVonStationen.Text = "Mögliche Verbindungen von Stationen";
+      this.MöglicheVerbindungenVonStationen.Text = "Abfahrtstafel";
       this.MöglicheVerbindungenVonStationen.UseVisualStyleBackColor = true;
       this.MöglicheVerbindungenVonStationen.Click += new System.EventHandler(this.AlleVerbindungenVonStationSuchen_Click);
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(111, 201);
+      this.label2.Location = new System.Drawing.Point(95, 131);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(41, 13);
       this.label2.TabIndex = 9;
@@ -181,7 +185,7 @@
       // 
       // textBox3
       // 
-      this.textBox3.Location = new System.Drawing.Point(114, 222);
+      this.textBox3.Location = new System.Drawing.Point(98, 152);
       this.textBox3.Name = "textBox3";
       this.textBox3.Size = new System.Drawing.Size(100, 20);
       this.textBox3.TabIndex = 10;
@@ -189,7 +193,7 @@
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(231, 201);
+      this.label5.Location = new System.Drawing.Point(215, 131);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(43, 13);
       this.label5.TabIndex = 11;
@@ -197,7 +201,7 @@
       // 
       // textBox4
       // 
-      this.textBox4.Location = new System.Drawing.Point(234, 221);
+      this.textBox4.Location = new System.Drawing.Point(218, 151);
       this.textBox4.Name = "textBox4";
       this.textBox4.Size = new System.Drawing.Size(100, 20);
       this.textBox4.TabIndex = 12;
@@ -210,7 +214,7 @@
             this.Column4,
             this.Column1,
             this.Column2});
-      this.VorschlaegeChangesGrid.Location = new System.Drawing.Point(114, 300);
+      this.VorschlaegeChangesGrid.Location = new System.Drawing.Point(98, 243);
       this.VorschlaegeChangesGrid.Name = "VorschlaegeChangesGrid";
       this.VorschlaegeChangesGrid.Size = new System.Drawing.Size(444, 171);
       this.VorschlaegeChangesGrid.TabIndex = 13;
@@ -240,31 +244,42 @@
       this.Column2.Name = "Column2";
       this.Column2.ReadOnly = true;
       // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.tbx_A);
+      this.groupBox1.Controls.Add(this.VorschlaegeChangesGrid);
+      this.groupBox1.Controls.Add(this.label1);
+      this.groupBox1.Controls.Add(this.textBox4);
+      this.groupBox1.Controls.Add(this.label3);
+      this.groupBox1.Controls.Add(this.label4);
+      this.groupBox1.Controls.Add(this.button1);
+      this.groupBox1.Controls.Add(this.label5);
+      this.groupBox1.Controls.Add(this.tbx_B);
+      this.groupBox1.Controls.Add(this.textBox3);
+      this.groupBox1.Controls.Add(this.label2);
+      this.groupBox1.Location = new System.Drawing.Point(12, 107);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(671, 480);
+      this.groupBox1.TabIndex = 14;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Text = "Hauptteil";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(696, 484);
-      this.Controls.Add(this.VorschlaegeChangesGrid);
-      this.Controls.Add(this.textBox4);
-      this.Controls.Add(this.label5);
-      this.Controls.Add(this.textBox3);
-      this.Controls.Add(this.label2);
+      this.ClientSize = new System.Drawing.Size(696, 599);
+      this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.groupBox2);
-      this.Controls.Add(this.label4);
-      this.Controls.Add(this.label3);
-      this.Controls.Add(this.button1);
-      this.Controls.Add(this.tbx_B);
-      this.Controls.Add(this.tbx_A);
-      this.Controls.Add(this.label1);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form1";
       this.Load += new System.EventHandler(this.Form1_Load);
       this.groupBox2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).EndInit();
+      this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -291,6 +306,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+    private System.Windows.Forms.GroupBox groupBox1;
   }
 }
 

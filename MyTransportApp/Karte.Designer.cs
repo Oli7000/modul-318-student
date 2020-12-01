@@ -28,26 +28,30 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.button1 = new System.Windows.Forms.Button();
+      this.Station_suchen = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.Name_von_Station = new System.Windows.Forms.TextBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.VerbindungenFinden = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
       this.button4 = new System.Windows.Forms.Button();
       this.button5 = new System.Windows.Forms.Button();
       this.MöglicheVerbindungenVonStationen = new System.Windows.Forms.Button();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.Coordinates = new System.Windows.Forms.ListBox();
       this.groupBox2.SuspendLayout();
+      this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
-      // button1
+      // Station_suchen
       // 
-      this.button1.Location = new System.Drawing.Point(381, 113);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(122, 34);
-      this.button1.TabIndex = 0;
-      this.button1.Text = "Station suchen";
-      this.button1.UseVisualStyleBackColor = true;
+      this.Station_suchen.Location = new System.Drawing.Point(381, 113);
+      this.Station_suchen.Name = "Station_suchen";
+      this.Station_suchen.Size = new System.Drawing.Size(122, 34);
+      this.Station_suchen.TabIndex = 0;
+      this.Station_suchen.Text = "Station suchen";
+      this.Station_suchen.UseVisualStyleBackColor = true;
+      this.Station_suchen.Click += new System.EventHandler(this.Station_suchen_Click);
       // 
       // label1
       // 
@@ -58,12 +62,12 @@
       this.label1.TabIndex = 1;
       this.label1.Text = "Name der Station:";
       // 
-      // textBox1
+      // Name_von_Station
       // 
-      this.textBox1.Location = new System.Drawing.Point(181, 121);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(100, 20);
-      this.textBox1.TabIndex = 2;
+      this.Name_von_Station.Location = new System.Drawing.Point(181, 121);
+      this.Name_von_Station.Name = "Name_von_Station";
+      this.Name_von_Station.Size = new System.Drawing.Size(100, 20);
+      this.Name_von_Station.TabIndex = 2;
       // 
       // groupBox2
       // 
@@ -72,7 +76,7 @@
       this.groupBox2.Controls.Add(this.button4);
       this.groupBox2.Controls.Add(this.button5);
       this.groupBox2.Controls.Add(this.MöglicheVerbindungenVonStationen);
-      this.groupBox2.Location = new System.Drawing.Point(47, 12);
+      this.groupBox2.Location = new System.Drawing.Point(13, 12);
       this.groupBox2.Name = "groupBox2";
       this.groupBox2.Size = new System.Drawing.Size(671, 67);
       this.groupBox2.TabIndex = 9;
@@ -123,23 +127,43 @@
       this.MöglicheVerbindungenVonStationen.Name = "MöglicheVerbindungenVonStationen";
       this.MöglicheVerbindungenVonStationen.Size = new System.Drawing.Size(198, 36);
       this.MöglicheVerbindungenVonStationen.TabIndex = 1;
-      this.MöglicheVerbindungenVonStationen.Text = "Mögliche Verbindungen von Stationen";
+      this.MöglicheVerbindungenVonStationen.Text = "Abfahrtstafel";
       this.MöglicheVerbindungenVonStationen.UseVisualStyleBackColor = true;
       this.MöglicheVerbindungenVonStationen.Click += new System.EventHandler(this.MöglicheVerbindungenVonStationen_Click);
+      // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.Coordinates);
+      this.groupBox1.Location = new System.Drawing.Point(33, 176);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(635, 280);
+      this.groupBox1.TabIndex = 10;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Text = "Koordinaten";
+      // 
+      // Coordinates
+      // 
+      this.Coordinates.FormattingEnabled = true;
+      this.Coordinates.Location = new System.Drawing.Point(62, 45);
+      this.Coordinates.Name = "Coordinates";
+      this.Coordinates.Size = new System.Drawing.Size(462, 160);
+      this.Coordinates.TabIndex = 0;
       // 
       // Karte
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(696, 484);
+      this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.groupBox2);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.Name_von_Station);
       this.Controls.Add(this.label1);
-      this.Controls.Add(this.button1);
+      this.Controls.Add(this.Station_suchen);
       this.Name = "Karte";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Karte";
       this.groupBox2.ResumeLayout(false);
+      this.groupBox1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -147,14 +171,16 @@
 
     #endregion
 
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button Station_suchen;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox Name_von_Station;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Button VerbindungenFinden;
     private System.Windows.Forms.Button button2;
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.Button MöglicheVerbindungenVonStationen;
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.ListBox Coordinates;
   }
 }

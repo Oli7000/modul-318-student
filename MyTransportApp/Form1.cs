@@ -43,27 +43,19 @@ namespace MyTransportApp
       var VonA = (tbx_A.Text);
       var VonB = (tbx_B.Text);
 
-      var connections = _transport.GetConnections(VonA, VonB).ConnectionList;
-      Console.WriteLine(connections.First().To.Arrival);
-
       try
       {
+        var connections = _transport.GetConnections(VonA, VonB).ConnectionList;
+        //Console.WriteLine(connections.First().To.Arrival);
+
         VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(0).From.Departure, connections.ElementAt(0).To.Platform, });
-      }
-      catch
-      {
-        MessageBox.Show("Leider wurde nichts gefunden");
-      }
-
-      try
-      {
         VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(1).From.Departure, connections.ElementAt(1).To.Platform, });
         VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(2).From.Departure, connections.ElementAt(2).To.Platform, });
         VorschlaegeChangesGrid.Rows.Add(new[] { VonA.ToString(), VonB.ToString(), connections.ElementAt(3).From.Departure, connections.ElementAt(3).To.Platform, });
       }
       catch
       {
-        MessageBox.Show("Leider wurde nicht mehr gefunden");
+        MessageBox.Show("Leider wurde nichts gefunden");
       }
     }
 
@@ -76,6 +68,11 @@ namespace MyTransportApp
     }
 
     private void VorschlaegeChangesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+
+    private void tbx_A_TextChanged(object sender, EventArgs e)
     {
 
     }
