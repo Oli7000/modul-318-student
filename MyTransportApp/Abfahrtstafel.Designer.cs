@@ -38,9 +38,9 @@
       this.button3 = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.abfahrtstafel = new System.Windows.Forms.DataGridView();
+      this.Station = new System.Windows.Forms.ComboBox();
       this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Station = new System.Windows.Forms.ComboBox();
       this.groupBox2.SuspendLayout();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.abfahrtstafel)).BeginInit();
@@ -151,6 +151,15 @@
       this.abfahrtstafel.Size = new System.Drawing.Size(624, 332);
       this.abfahrtstafel.TabIndex = 3;
       // 
+      // Station
+      // 
+      this.Station.FormattingEnabled = true;
+      this.Station.Location = new System.Drawing.Point(161, 85);
+      this.Station.Name = "Station";
+      this.Station.Size = new System.Drawing.Size(121, 21);
+      this.Station.TabIndex = 4;
+      this.Station.TextUpdate += new System.EventHandler(this.Station_TextChanged);
+      // 
       // Column1
       // 
       this.Column1.HeaderText = "Nach:";
@@ -160,19 +169,10 @@
       // 
       // Column2
       // 
-      this.Column2.HeaderText = "Platform";
+      this.Column2.HeaderText = "Plattform";
       this.Column2.Name = "Column2";
       this.Column2.ReadOnly = true;
       this.Column2.Width = 280;
-      // 
-      // Station
-      // 
-      this.Station.FormattingEnabled = true;
-      this.Station.Location = new System.Drawing.Point(161, 85);
-      this.Station.Name = "Station";
-      this.Station.Size = new System.Drawing.Size(121, 21);
-      this.Station.TabIndex = 4;
-      this.Station.TextUpdate += new System.EventHandler(this.Station_TextChanged);
       // 
       // Alle_Verbindungen_für_Station
       // 
@@ -204,8 +204,8 @@
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.DataGridView abfahrtstafel;
+    private System.Windows.Forms.ComboBox Station;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-    private System.Windows.Forms.ComboBox Station;
   }
 }
