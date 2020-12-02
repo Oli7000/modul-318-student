@@ -46,16 +46,24 @@ namespace MyTransportApp
 
       ITransport transport = new Transport();
 
-      var Search = (Name_von_Station.Text);
-      var SearchStation = _transport.GetStations(Search).StationList;
-      var ForXCoordinate = ("X: " + SearchStation.First().Coordinate.XCoordinate);
-      var ForYCoordinate = ("Y: " + SearchStation.First().Coordinate.YCoordinate);
+      try
+      {
 
-      Coordinates.Items.Add(ForXCoordinate + "    " + ForYCoordinate);
+        var Search = (Name_von_Station.Text);
+        var SearchStation = _transport.GetStations(Search).StationList;
+        var ForXCoordinate = ("X: " + SearchStation.First().Coordinate.XCoordinate);
+        var ForYCoordinate = ("Y: " + SearchStation.First().Coordinate.YCoordinate);
 
-      StationBoardRoot stationBoardRoot = new StationBoardRoot();
-      stationBoardRoot = _transport.GetStationBoard(Name_von_Station.Text, "");
-      ShowMap(stationBoardRoot);
+        Coordinates.Items.Add(ForXCoordinate + "    " + ForYCoordinate);
+
+        StationBoardRoot stationBoardRoot = new StationBoardRoot();
+        stationBoardRoot = _transport.GetStationBoard(Name_von_Station.Text, "");
+        ShowMap(stationBoardRoot);
+      }
+      catch
+      {
+        MessageBox.Show("Es wurden leider keine Koordinaten zu dieser Station gefunden");
+      }
     }
 
     private void gMapControl1_Load(object sender, EventArgs e)

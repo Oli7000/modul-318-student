@@ -43,19 +43,27 @@ namespace MyTransportApp
 
       ITransport transport = new Transport();
 
-      var stations = (Station.Text);
-
-
-      var stationBoard = _transport.GetStationBoard(stations, " ");
-      //var departures = _transport.GetConnections(stationBoard, "", "", "").ConnectionList;
-
-      foreach (var i in stationBoard.Entries)
+      try
       {
-        abfahrtstafel.Rows.Add(new[]
+
+        var stations = (Station.Text);
+
+
+        var stationBoard = _transport.GetStationBoard(stations, " ");
+        //var departures = _transport.GetConnections(stationBoard, "", "", "").ConnectionList;
+
+        foreach (var i in stationBoard.Entries)
         {
+          abfahrtstafel.Rows.Add(new[]
+          {
         i.To,
         i.Number,
       });
+        }
+      }
+      catch
+      {
+        MessageBox.Show("Es wurden leider keine Verbindungen von dieser Station aus gefunden");
       }
     }
 
