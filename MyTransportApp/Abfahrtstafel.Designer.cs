@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alle_Verbindungen_für_Station));
       this.label1 = new System.Windows.Forms.Label();
       this.abfahrtstafel_anzeigen = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -37,8 +38,8 @@
       this.button5 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.abfahrtstafel = new System.Windows.Forms.DataGridView();
       this.Station = new System.Windows.Forms.ComboBox();
+      this.abfahrtstafel = new System.Windows.Forms.DataGridView();
       this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.groupBox2.SuspendLayout();
@@ -140,6 +141,15 @@
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Abfahrtstafel";
       // 
+      // Station
+      // 
+      this.Station.FormattingEnabled = true;
+      this.Station.Location = new System.Drawing.Point(161, 85);
+      this.Station.Name = "Station";
+      this.Station.Size = new System.Drawing.Size(121, 21);
+      this.Station.TabIndex = 4;
+      this.Station.TextUpdate += new System.EventHandler(this.Station_TextChanged);
+      // 
       // abfahrtstafel
       // 
       this.abfahrtstafel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,15 +160,6 @@
       this.abfahrtstafel.Name = "abfahrtstafel";
       this.abfahrtstafel.Size = new System.Drawing.Size(624, 332);
       this.abfahrtstafel.TabIndex = 3;
-      // 
-      // Station
-      // 
-      this.Station.FormattingEnabled = true;
-      this.Station.Location = new System.Drawing.Point(161, 85);
-      this.Station.Name = "Station";
-      this.Station.Size = new System.Drawing.Size(121, 21);
-      this.Station.TabIndex = 4;
-      this.Station.TextUpdate += new System.EventHandler(this.Station_TextChanged);
       // 
       // Column1
       // 
@@ -181,6 +182,7 @@
       this.ClientSize = new System.Drawing.Size(696, 599);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.groupBox2);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Alle_Verbindungen_für_Station";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Abfahrtstafel";
