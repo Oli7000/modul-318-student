@@ -70,10 +70,18 @@ namespace MyTransportApp
 
       var stations= _transport.GetStations(VonA);
 
-      foreach (var station in stations.StationList)
+      try
       {
-        tbx_A.Items.Add(station.Name);
+        foreach (var station in stations.StationList)
+        {
+          tbx_A.Items.Add(station.Name);
+        }
       }
+      catch
+      {
+        MessageBox.Show("Bitte nicht zu schnell Tippen");
+      }
+
 
       tbx_A.Focus();
       tbx_A.SelectionStart = tbx_A.Text.Length;
@@ -88,9 +96,18 @@ namespace MyTransportApp
 
       var stations = _transport.GetStations(VonA);
 
-      foreach (var station in stations.StationList)
+      try
       {
-        tbx_B.Items.Add(station.Name);
+
+        foreach (var station in stations.StationList)
+        {
+          tbx_B.Items.Add(station.Name);
+        }
+
+      }
+      catch
+      {
+        MessageBox.Show("Bitte nicht zu schnell Tippen");
       }
 
       tbx_B.Focus();

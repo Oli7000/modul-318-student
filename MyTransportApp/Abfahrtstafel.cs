@@ -68,9 +68,16 @@ namespace MyTransportApp
 
       var stations = _transport.GetStations(VonA);
 
-      foreach (var station in stations.StationList)
+      try
       {
-        Station.Items.Add(station.Name);
+        foreach (var station in stations.StationList)
+        {
+          Station.Items.Add(station.Name);
+        }
+      }
+      catch
+      {
+        MessageBox.Show("Bitte nicht zu schnell Tippen");
       }
 
       Station.Focus();
