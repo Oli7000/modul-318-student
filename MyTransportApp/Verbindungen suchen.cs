@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace MyTransportApp
 {
@@ -20,13 +21,15 @@ namespace MyTransportApp
       InitializeComponent();
     }
 
-    private void Form1_Load(object sender, EventArgs e)
+    private void Karte_Click(object sender, EventArgs e)
     {
-      var result = _transport.GetStations(query:"bas"); 
-      Console.WriteLine(result.StationList.First().Name);
+      this.Hide();
+      Karte f1 = new Karte();
+      f1.ShowDialog();
+      this.Close();
     }
 
-    private void AlleVerbindungenVonStationSuchen_Click(object sender, EventArgs e)
+    private void Abfahrtstafel_Click(object sender, EventArgs e)
     {
       this.Hide();
       Alle_Verbindungen_für_Station f1 = new Alle_Verbindungen_für_Station();
@@ -46,7 +49,6 @@ namespace MyTransportApp
       try
       {
         var connections = _transport.GetConnections(VonA, VonB, date, time).ConnectionList;
-        //Console.WriteLine(connections.First().To.Arrival);
 
         foreach(var connection in connections)
         {
@@ -57,14 +59,6 @@ namespace MyTransportApp
       {
         MessageBox.Show("Es wurden keine Verbindungen gefunden: " + ex.Message);
       }
-    }
-
-    private void Karte_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-      Karte f1 = new Karte();
-      f1.ShowDialog();
-      this.Close();
     }
 
     private void tbx_A_TextChanged(object sender, EventArgs e)

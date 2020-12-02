@@ -45,16 +45,36 @@ namespace MyTransportApp
 
       var stations = (Station.Text);
 
+
       var stationBoard = _transport.GetStationBoard(stations, " ");
+      //var departures = _transport.GetConnections(stationBoard, "", "", "").ConnectionList;
 
       foreach (var i in stationBoard.Entries)
       {
         abfahrtstafel.Rows.Add(new[]
         {
-        stations.ToString(),
         i.To,
+        i.Number,
       });
       }
+    }
+
+    private void Station_TextChanged(object sender, EventArgs e)
+    {
+      ITransport transport = new Transport();
+      Station.Items.Clear();
+
+      var VonA = (Station.Text);
+
+      var stations = _transport.GetStations(VonA);
+
+      foreach (var station in stations.StationList)
+      {
+        Station.Items.Add(station.Name);
+      }
+
+      Station.Focus();
+      Station.SelectionStart = Station.Text.Length;
     }
   }
 }

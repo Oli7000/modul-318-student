@@ -84,5 +84,23 @@ namespace MyTransportApp
     {
       gMapControl1.Overlays.Clear();
     }
+
+    private void Name_von_Station_TextChanged(object sender, EventArgs e)
+    {
+      ITransport transport = new Transport();
+      Name_von_Station.Items.Clear();
+
+      var VonA = (Name_von_Station.Text);
+
+      var stations = _transport.GetStations(VonA);
+
+      foreach (var station in stations.StationList)
+      {
+        Name_von_Station.Items.Add(station.Name);
+      }
+
+      Name_von_Station.Focus();
+      Name_von_Station.SelectionStart = Name_von_Station.Text.Length;
+    }
   }
 }

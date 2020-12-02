@@ -37,7 +37,7 @@
       this.Karte = new System.Windows.Forms.Button();
       this.button4 = new System.Windows.Forms.Button();
       this.button5 = new System.Windows.Forms.Button();
-      this.MöglicheVerbindungenVonStationen = new System.Windows.Forms.Button();
+      this.Abfahrtstafel = new System.Windows.Forms.Button();
       this.label2 = new System.Windows.Forms.Label();
       this.VorschlaegeChangesGrid = new System.Windows.Forms.DataGridView();
       this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +102,7 @@
       this.groupBox2.Controls.Add(this.Karte);
       this.groupBox2.Controls.Add(this.button4);
       this.groupBox2.Controls.Add(this.button5);
-      this.groupBox2.Controls.Add(this.MöglicheVerbindungenVonStationen);
+      this.groupBox2.Controls.Add(this.Abfahrtstafel);
       this.groupBox2.Location = new System.Drawing.Point(12, 12);
       this.groupBox2.Name = "groupBox2";
       this.groupBox2.Size = new System.Drawing.Size(671, 67);
@@ -149,15 +149,15 @@
       this.button5.Text = "Favoriten";
       this.button5.UseVisualStyleBackColor = true;
       // 
-      // MöglicheVerbindungenVonStationen
+      // Abfahrtstafel
       // 
-      this.MöglicheVerbindungenVonStationen.Location = new System.Drawing.Point(209, 19);
-      this.MöglicheVerbindungenVonStationen.Name = "MöglicheVerbindungenVonStationen";
-      this.MöglicheVerbindungenVonStationen.Size = new System.Drawing.Size(198, 36);
-      this.MöglicheVerbindungenVonStationen.TabIndex = 1;
-      this.MöglicheVerbindungenVonStationen.Text = "Abfahrtstafel";
-      this.MöglicheVerbindungenVonStationen.UseVisualStyleBackColor = true;
-      this.MöglicheVerbindungenVonStationen.Click += new System.EventHandler(this.AlleVerbindungenVonStationSuchen_Click);
+      this.Abfahrtstafel.Location = new System.Drawing.Point(209, 19);
+      this.Abfahrtstafel.Name = "Abfahrtstafel";
+      this.Abfahrtstafel.Size = new System.Drawing.Size(198, 36);
+      this.Abfahrtstafel.TabIndex = 1;
+      this.Abfahrtstafel.Text = "Abfahrtstafel";
+      this.Abfahrtstafel.UseVisualStyleBackColor = true;
+      this.Abfahrtstafel.Click += new System.EventHandler(this.Abfahrtstafel_Click);
       // 
       // label2
       // 
@@ -283,8 +283,7 @@
       this.Controls.Add(this.groupBox2);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Form1";
-      this.Load += new System.EventHandler(this.Form1_Load);
+      this.Text = "Verbindungen suchen";
       this.groupBox2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).EndInit();
       this.groupBox1.ResumeLayout(false);
@@ -300,7 +299,7 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.GroupBox groupBox2;
-    private System.Windows.Forms.Button MöglicheVerbindungenVonStationen;
+    private System.Windows.Forms.Button Abfahrtstafel;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button Karte;
     private System.Windows.Forms.Button button4;

@@ -52,17 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alle Verbindungen für Station.cs">
+    <Compile Include="Abfahrtstafel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alle Verbindungen für Station.Designer.cs">
-      <DependentUpon>Alle Verbindungen für Station.cs</DependentUpon>
+    <Compile Include="Abfahrtstafel.Designer.cs">
+      <DependentUpon>Abfahrtstafel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Verbindungen suchen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Verbindungen suchen.Designer.cs">
+      <DependentUpon>Verbindungen suchen.cs</DependentUpon>
     </Compile>
     <Compile Include="Karte.cs">
       <SubType>Form</SubType>
@@ -72,11 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Alle Verbindungen für Station.resx">
-      <DependentUpon>Alle Verbindungen für Station.cs</DependentUpon>
+    <EmbeddedResource Include="Abfahrtstafel.resx">
+      <DependentUpon>Abfahrtstafel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Verbindungen suchen.resx">
+      <DependentUpon>Verbindungen suchen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Karte.resx">
       <DependentUpon>Karte.cs</DependentUpon>
