@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.Net;
+using System.IO;
 
 namespace MyTransportApp
 {
@@ -112,6 +114,21 @@ namespace MyTransportApp
 
       tbx_B.Focus();
       tbx_B.SelectionStart = tbx_B.Text.Length;
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+      try
+      {
+        using (var client = new WebClient())
+        using (client.OpenRead("http://google.com/generate_204"))
+        return;
+      }
+      catch
+      {
+        MessageBox.Show("Connection to the database not possible");
+        this.Close();
+      }
     }
   }
 }

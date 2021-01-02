@@ -12,6 +12,8 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using System.Net;
+using System.IO;
 
 namespace MyTransportApp
 {
@@ -90,6 +92,18 @@ namespace MyTransportApp
 
     private void Karte_Load(object sender, EventArgs e)
     {
+      try
+      {
+        using (var client = new WebClient())
+        using (client.OpenRead("http://google.com/generate_204"))
+          return;
+      }
+      catch
+      {
+        MessageBox.Show("Connection to the database not possible");
+        this.Close();
+      }
+
       gMapControl1.Overlays.Clear();
     }
 

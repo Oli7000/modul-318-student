@@ -186,6 +186,7 @@
       this.Name = "Alle_Verbindungen_für_Station";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Abfahrtstafel";
+      this.Load += new System.EventHandler(this.Alle_Verbindungen_für_Station_Load);
       this.groupBox2.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();

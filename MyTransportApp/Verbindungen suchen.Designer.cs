@@ -286,6 +286,7 @@
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Verbindungen suchen";
+      this.Load += new System.EventHandler(this.Form1_Load);
       this.groupBox2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.VorschlaegeChangesGrid)).EndInit();
       this.groupBox1.ResumeLayout(false);
